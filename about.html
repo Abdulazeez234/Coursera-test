@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Money Request</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <nav class="menu">
+        <div class="logo">MY HOUSE</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Money request</a></li>
+            <li><a href="needs.html" class="active">House Needs</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="cozy-container">
+        <h1>💸 Money Request</h1>
+        <p>
+            Need something for the house? Let us know below and we’ll do our best to help out!
+        </p>
+        <form id="requestForm">
+            <input type="text" id="requestInput" placeholder="Enter your request here..." required>
+            <button type="submit" id="submitBtn">Submit Request</button>
+        </form>
+        <p id="thankYouMsg" style="display:none; color: #2e7d32; font-weight: bold; margin-top: 18px;">
+            Thank you for your request!
+        </p>
+    </div>
+    <script>
+        const form = document.getElementById('requestForm');
+        const input = document.getElementById('requestInput');
+        const thankYou = document.getElementById('thankYouMsg');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if(input.value.trim() !== "") {
+                thankYou.style.display = 'block';
+                input.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

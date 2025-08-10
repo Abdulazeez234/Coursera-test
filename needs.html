@@ -1,0 +1,37 @@
+<html>
+     <link rel="stylesheet" href="design.css">
+<nav class="menu">
+        <div class="logo">MY HOUSE</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Money request</a></li>
+            <li><a href="needs.html" class="active">House Needs</a></li>
+            <li><a href="#">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="cozy-container">
+        <h1>📝 Suggest a House Need</h1>
+        <p>
+            Let us know what the house needs! Your suggestions help make our home better for everyone.
+        </p>
+        <form id="needsForm">
+            <input type="text" id="needsInput" placeholder="What does the house need?" required>
+            <button type="submit" id="needsBtn">Submit Need</button>
+        </form>
+        <p id="needsThankYou" style="display:none;">Thank you for your suggestion!</p>
+    </div>
+    <script>
+        const needsForm = document.getElementById('needsForm');
+        const needsInput = document.getElementById('needsInput');
+        const needsThankYou = document.getElementById('needsThankYou');
+
+        needsForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if(needsInput.value.trim() !== "") {
+                needsThankYou.style.display = 'block';
+                needsInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
